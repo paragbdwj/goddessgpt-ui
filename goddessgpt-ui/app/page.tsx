@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/Logo";
 
 export default function Home() {
   return (
@@ -14,7 +15,8 @@ export default function Home() {
       <main className="flex-1 flex flex-col items-center justify-center px-4 text-center max-w-5xl mx-auto py-6 sm:py-12 md:py-16 relative z-10">
         <div className="space-y-4 sm:space-y-6 md:space-y-8 w-full">
           {/* Logo and Title */}
-          <div className="space-y-2 sm:space-y-3 md:space-y-4">
+          <div className="space-y-2 sm:space-y-3 md:space-y-4 flex flex-col items-center">
+            <Logo size="lg" withText={false} className="mb-4" />
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent">
               GoddessGPT
             </h1>
