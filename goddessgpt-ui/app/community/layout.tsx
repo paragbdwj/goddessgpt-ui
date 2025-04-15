@@ -1,7 +1,7 @@
 import React from "react";
 import ChatNavbar from "@/components/chat/ChatNavbar";
 
-export default function ChatLayout({
+export default function CommunityLayout({
   children,
 }: {
   children: React.ReactNode;

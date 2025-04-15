@@ -112,7 +112,7 @@ export default function ChatInterface() {
   };
 
   return (
-    <div className="flex flex-col h-full max-w-3xl mx-auto px-4">
+    <div className="flex flex-col h-full mx-auto px-4 w-full max-w-4xl lg:max-w-5xl xl:max-w-6xl">
       {/* Chat messages container */}
       <div className="flex-1 overflow-y-auto py-4 space-y-4">
         {messages.map((message) => (
@@ -123,7 +123,7 @@ export default function ChatInterface() {
             }`}
           >
             <div
-              className={`flex items-start max-w-[80%] ${
+              className={`flex items-start max-w-[80%] sm:max-w-[70%] md:max-w-[65%] lg:max-w-[60%] ${
                 message.role === "user" ? "flex-row-reverse" : "flex-row"
               }`}
             >
@@ -150,9 +150,9 @@ export default function ChatInterface() {
                   message.role === "user"
                     ? "bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white"
                     : "bg-white border border-pink-100"
-                }`}
+                } sm:max-w-[90%] md:max-w-[80%] lg:max-w-[70%]`}
               >
-                <p className="text-sm">{message.content}</p>
+                <p className="text-sm sm:text-base">{message.content}</p>
                 <p
                   className={`text-[10px] mt-1 ${
                     message.role === "user" ? "text-pink-100" : "text-gray-400"
@@ -171,21 +171,21 @@ export default function ChatInterface() {
       </div>
 
       {/* Input form */}
-      <div className="border-t border-pink-100 py-4">
+      <div className="border-t border-pink-100 py-4 sm:py-5 md:py-6">
         <form
           onSubmit={handleSendMessage}
-          className="flex items-center space-x-2"
+          className="flex items-center space-x-2 sm:space-x-3 max-w-4xl mx-auto w-full"
         >
           <Input
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type your message..."
-            className="flex-1 border-pink-200 focus-visible:ring-pink-400"
+            className="flex-1 border-pink-200 focus-visible:ring-pink-400 py-2 sm:py-3 md:py-4 px-4 text-sm sm:text-base"
             disabled={isLoading}
           />
           <Button
             type="submit"
-            className="bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white hover:opacity-90"
+            className="bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white hover:opacity-90 py-2 sm:py-3 px-4 sm:px-6"
             disabled={isLoading}
           >
             {isLoading ? (

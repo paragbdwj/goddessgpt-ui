@@ -166,7 +166,7 @@ export default function CommunityChat() {
   );
 
   return (
-    <div className="flex flex-col h-full max-w-3xl mx-auto px-4">
+    <div className="flex flex-col h-full mx-auto px-4 w-full max-w-4xl lg:max-w-5xl xl:max-w-6xl">
       <div className="py-4">
         <h1 className="text-xl font-semibold text-pink-800">
           Community Discussion
@@ -190,10 +190,10 @@ export default function CommunityChat() {
           posts.map((post) => (
             <div
               key={post.id}
-              className="bg-white/70 backdrop-blur-sm rounded-lg p-4 border border-pink-100"
+              className="bg-white/70 backdrop-blur-sm rounded-lg p-4 sm:p-5 border border-pink-100"
             >
-              <div className="flex items-start space-x-3">
-                <Avatar className="h-8 w-8 border border-pink-200">
+              <div className="flex items-start space-x-3 sm:space-x-4">
+                <Avatar className="h-8 w-8 sm:h-10 sm:w-10 border border-pink-200">
                   <AvatarImage 
                     src={post.author.image || ""} 
                     alt={post.author.name} 
@@ -204,12 +204,12 @@ export default function CommunityChat() {
                 </Avatar>
                 
                 <div className="flex-1">
-                  <div className="flex justify-between items-center mb-1">
+                  <div className="flex justify-between items-center mb-1 sm:mb-2">
                     <div>
-                      <p className="font-medium text-sm text-gray-800">
+                      <p className="font-medium text-sm sm:text-base text-gray-800">
                         {post.author.name}
                       </p>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-xs sm:text-sm text-gray-500">
                         {post.timestamp.toLocaleString(undefined, {
                           dateStyle: "medium",
                           timeStyle: "short",
@@ -218,7 +218,7 @@ export default function CommunityChat() {
                     </div>
                   </div>
                   
-                  <p className="text-sm text-gray-700 mt-2">{post.content}</p>
+                  <p className="text-sm sm:text-base text-gray-700 mt-2">{post.content}</p>
                   
                   <div className="flex items-center space-x-4 mt-3">
                     <button
@@ -265,19 +265,19 @@ export default function CommunityChat() {
       </div>
 
       {/* Post input form */}
-      <div className="border-t border-pink-100 py-4">
-        <form onSubmit={handlePostMessage} className="space-y-3">
+      <div className="border-t border-pink-100 py-4 sm:py-5 md:py-6">
+        <form onSubmit={handlePostMessage} className="space-y-3 max-w-4xl mx-auto w-full">
           <Textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Share your thoughts, questions, or experiences with the community..."
-            className="resize-none border-pink-200 focus-visible:ring-pink-400 min-h-24"
+            className="resize-none border-pink-200 focus-visible:ring-pink-400 min-h-24 text-sm sm:text-base"
             disabled={isPosting}
           />
           <div className="flex justify-end">
             <Button
               type="submit"
-              className="bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white hover:opacity-90"
+              className="bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white hover:opacity-90 py-2 sm:py-3 px-4 sm:px-6"
               disabled={isPosting}
             >
               {isPosting ? (
