@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Avatar } from "@/components/ui/avatar";
 
 export default function Home() {
   return (
@@ -16,11 +15,6 @@ export default function Home() {
         <div className="space-y-4 sm:space-y-6 md:space-y-8 w-full">
           {/* Logo and Title */}
           <div className="space-y-2 sm:space-y-3 md:space-y-4">
-            <div className="inline-block animate-bounce">
-              <Avatar className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 border-2 sm:border-4 border-pink-200 bg-gradient-to-br from-purple-400 to-pink-500">
-                <span className="text-xl sm:text-2xl md:text-3xl">✨</span>
-              </Avatar>
-            </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent">
               GoddessGPT
             </h1>
