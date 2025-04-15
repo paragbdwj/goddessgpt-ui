@@ -13,7 +13,7 @@
   - **Mocking Details:**
     - API response from Google Auth endpoint is mocked to simulate successful or error responses as needed.
 
-- [ ] **2. Redirect to Chat Interface After Login**
+- [x] **2. Redirect to Chat Interface After Login**
   - **Priority:** Must Have
   - **Description:** As an authenticated user, I want to be redirected automatically to a chat interface once my Google Sign In is successful so that I can start interacting with the chatbot.
   - **Acceptance Criteria:**
@@ -23,7 +23,7 @@
   - **Mocking Details:**
     - Simulate a successful authentication token response and user profile retrieval API that returns the user's name and email.
 
-- [ ] **3. Display Chat Interface with Personalized Welcome Message**
+- [x] **3. Display Chat Interface with Personalized Welcome Message**
   - **Priority:** Must Have
   - **Description:** As a logged-in user, I want a chat interface that greets me with a personalized welcome message using my name so that I feel recognized and valued.
   - **Acceptance Criteria:**
@@ -34,7 +34,7 @@
     - The user profile API is mocked to return a sample name (e.g., "Alice").
     - The chat messages API is mocked to return a small set of historical messages, if needed.
 
-- [ ] **4. Basic Chat Messaging with GoddessGPT**
+- [x] **4. Basic Chat Messaging with GoddessGPT**
   - **Priority:** Must Have
   - **Description:** As a user, I want to communicate with the GoddessGPT chatbot in a conversational interface so that I can seek advice and support for my emotional, mental, social, and physical well-being.
   - **Acceptance Criteria:**
@@ -46,7 +46,7 @@
     - Create a mocked API endpoint for chatbot responses that returns a pre-defined message or a random supportive statement.
     - Ensure error handling for failed responses and display a user-friendly message.
 
-- [ ] **5. Global Community Chat Interface**
+- [x] **5. Global Community Chat Interface**
   - **Priority:** Should Have
   - **Description:** As a user, I want to access a global community chat where I can view and post experiences shared by others, to foster a sense of community support.
   - **Acceptance Criteria:**
@@ -59,7 +59,7 @@
     - Use a mocked API endpoint that returns an array of community messages.
     - Provide a mocked API to simulate message posting, which returns the new message with a timestamp and a unique identifier.
 
-- [ ] **6. Error Handling and Notification System**
+- [x] **6. Error Handling and Notification System**
   - **Priority:** Should Have
   - **Description:** As a user, I want to be informed when something goes wrong (e.g., failed login, message sending failure) so that I can understand what needs to be done next.
   - **Acceptance Criteria:**
@@ -69,7 +69,7 @@
   - **Mocking Details:**
     - Create mocked error responses to test different failure scenarios for login, chat submission, and community posting.
 
-- [ ] **7. Responsive Design and Accessibility**
+- [x] **7. Responsive Design and Accessibility**
   - **Priority:** Must Have
   - **Description:** As a user, I want the interface to be responsive and accessible so that I can use GoddessGPT easily on any device and by anyone regardless of ability.
   - **Acceptance Criteria:**
@@ -82,11 +82,11 @@
 
 ## Additional Considerations
 
-- [ ] **Authentication State Persistence**
+- [x] **Authentication State Persistence**
   - Ensure that user session data persists across refreshes. Mock local storage or cookies as needed for handling session information.
 
-- [ ] **Routing and Navigation**
+- [x] **Routing and Navigation**
   - Use a frontend routing library (if applicable) to handle navigation from landing page to chat interfaces. Mock route guards to prevent access to the chat without authentication.
 
-- [ ] **Loading States and Transitions**
+- [x] **Loading States and Transitions**
   - Add appropriate loaders, animations, or transition states while API calls are being made, especially during login, fetching chat history, and sending/receiving messages.
