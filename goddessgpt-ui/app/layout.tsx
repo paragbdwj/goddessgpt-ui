@@ -1,22 +1,7 @@
 import type { Metadata } from "next";
-import { Outfit, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/components/auth/AuthProvider";
 import { Toaster } from "@/components/ui/sonner";
-
-// Modern, clean sans-serif font for most content
-const outfitFont = Outfit({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-});
-
-// Elegant serif font for accents and headings
-const playfairFont = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "GoddessGPT - Supportive AI for Women's Wellbeing",
@@ -36,7 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfitFont.variable} ${playfairFont.variable} antialiased font-sans`}
+        className="antialiased"
+        style={{ fontFamily: 'Arial, sans-serif' }}
       >
         <AuthProvider>
           {children}
