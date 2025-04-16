@@ -90,11 +90,7 @@ export default function LandingNavbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-pink-800/20 bg-black/40 backdrop-blur-md">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-        <div className="flex items-center space-x-2">
-          <Link href="/">
-            <Logo size="sm" withText />
-          </Link>
-        </div>
+        <div className="flex-1"></div>
         
         <NavigationMenu>
           <NavigationMenuList className="gap-1">
