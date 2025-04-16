@@ -20,6 +20,21 @@ export default function Home() {
           <div className="space-y-6 sm:space-y-8 md:space-y-10 w-full">
             {/* Title */}
             <div className="space-y-3 sm:space-y-4 md:space-y-5 flex flex-col items-center">
+              <motion.div
+                className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mb-4"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+              >
+                <img
+                  src="/images/goddessgpt_logo.png"
+                  alt="GoddessGPT Logo"
+                  className="w-full h-full object-contain"
+                  style={{
+                    filter: "drop-shadow(0 8px 16px rgba(190, 24, 93, 0.3))"
+                  }}
+                />
+              </motion.div>
               <motion.h1 
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent"
                 initial={{ opacity: 0, y: 20 }}
@@ -34,7 +49,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
               >
-                Your supportive companion for emotional, physical, social, and mental well-being
+                Helping you feel better — emotionally, physically, socially, and mentally
               </motion.p>
             </div>
 

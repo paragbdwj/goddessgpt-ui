@@ -90,7 +90,20 @@ export default function LandingNavbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-pink-800/20 bg-black/40 backdrop-blur-md">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-        <div className="flex-1"></div>
+        <div className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <div className="w-8 h-8">
+              <img
+                src="/images/goddessgpt_logo.png"
+                alt="GoddessGPT Logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <span className="text-lg font-semibold bg-gradient-to-r from-fuchsia-500 to-pink-500 bg-clip-text text-transparent hidden sm:inline">
+              GoddessGPT
+            </span>
+          </Link>
+        </div>
         
         <NavigationMenu>
           <NavigationMenuList className="gap-1">
