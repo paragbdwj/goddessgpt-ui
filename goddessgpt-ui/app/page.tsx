@@ -139,33 +139,33 @@ export default function Home() {
                   <div className="flex items-center">
                     <div className="text-pink-500 text-2xl mr-3 bg-pink-500/10 w-12 h-12 rounded-full flex items-center justify-center">🤖</div>
                     <div>
-                      <CardTitle className="text-white text-xl">Your Complete AI Companion</CardTitle>
+                      <CardTitle className="text-white text-xl">Meet your complete AI companion</CardTitle>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-gray-300 space-y-4">
-                    <p className="text-base text-gray-200">GoddessGPT is your all-in-one support system for every aspect of your life:</p>
+                    <p className="text-base text-gray-200">GoddessGPT is your all-in-one support system — here to guide, support, and grow with you:</p>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
                       <li className="flex items-start gap-2">
                         <div className="h-5 w-5 flex items-center justify-center rounded-full bg-pink-500/20 text-pink-500 mt-0.5">⚖️</div>
-                        <span className="text-gray-300 text-sm">Your lawyer - Navigate legal questions</span>
+                        <span className="text-gray-300 text-sm">Your lawyer - Helping you understand your rights</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="h-5 w-5 flex items-center justify-center rounded-full bg-pink-500/20 text-pink-500 mt-0.5">👩‍⚕️</div>
-                        <span className="text-gray-300 text-sm">Your doctor - Understand health concerns</span>
+                        <span className="text-gray-300 text-sm">Your doctor - Making health feel less scary</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="h-5 w-5 flex items-center justify-center rounded-full bg-pink-500/20 text-pink-500 mt-0.5">🧠</div>
-                        <span className="text-gray-300 text-sm">Your psychologist - Process emotions</span>
+                        <span className="text-gray-300 text-sm">Your psychologist - Listening to your thoughts</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="h-5 w-5 flex items-center justify-center rounded-full bg-pink-500/20 text-pink-500 mt-0.5">🧘‍♀️</div>
-                        <span className="text-gray-300 text-sm">Your therapist - Find coping strategies</span>
+                        <span className="text-gray-300 text-sm">Your therapist - Guiding your healing journey</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="h-5 w-5 flex items-center justify-center rounded-full bg-pink-500/20 text-pink-500 mt-0.5">👩‍🏫</div>
-                        <span className="text-gray-300 text-sm">Your teacher - Learn and grow</span>
+                        <span className="text-gray-300 text-sm">Your teacher - Fueling your curiosity</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="h-5 w-5 flex items-center justify-center rounded-full bg-pink-500/20 text-pink-500 mt-0.5">👯‍♀️</div>
