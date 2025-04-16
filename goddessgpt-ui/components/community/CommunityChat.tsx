@@ -151,7 +151,7 @@ export default function CommunityChat() {
 
   // Skeleton loading component for posts
   const PostSkeleton = () => (
-    <div className="bg-white/70 rounded-lg p-4 border border-pink-100 space-y-3">
+    <div className="bg-white/40 backdrop-blur-sm rounded-lg p-4 border border-pink-100/30 space-y-3 shadow-sm">
       <div className="flex items-center space-x-2">
         <Skeleton className="h-8 w-8 rounded-full" />
         <div className="space-y-1">
@@ -190,15 +190,15 @@ export default function CommunityChat() {
           posts.map((post) => (
             <div
               key={post.id}
-              className="bg-white/70 backdrop-blur-sm rounded-lg p-4 sm:p-5 border border-pink-100"
+              className="bg-white/50 backdrop-blur-md rounded-lg p-4 sm:p-5 border border-pink-100/30 shadow-sm"
             >
               <div className="flex items-start space-x-3 sm:space-x-4">
-                <Avatar className="h-8 w-8 sm:h-10 sm:w-10 border border-pink-200">
+                <Avatar className="h-8 w-8 sm:h-10 sm:w-10 border border-pink-200/50">
                   <AvatarImage 
                     src={post.author.image || ""} 
                     alt={post.author.name} 
                   />
-                  <AvatarFallback className="bg-gradient-to-r from-purple-400 to-pink-400 text-white">
+                  <AvatarFallback className="bg-gradient-to-r from-purple-400/90 to-pink-400/90 text-white">
                     {post.author.name.charAt(0)}
                   </AvatarFallback>
                 </Avatar>
@@ -264,26 +264,29 @@ export default function CommunityChat() {
         <div ref={postsEndRef} />
       </div>
 
-      {/* Post input form */}
-      <div className="border-t border-pink-100 py-4 sm:py-5 md:py-6">
-        <form onSubmit={handlePostMessage} className="space-y-3 max-w-4xl mx-auto w-full">
-          <Textarea
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Share your thoughts, questions, or experiences with the community..."
-            className="resize-none border-pink-200 focus-visible:ring-pink-400 min-h-24 text-sm sm:text-base"
-            disabled={isPosting}
-          />
-          <div className="flex justify-end">
+      {/* Post form */}
+      <div className="py-4 sm:py-5">
+        <form
+          onSubmit={handlePostMessage}
+          className="space-y-4 max-w-4xl mx-auto w-full"
+        >
+          <div className="relative">
+            <Textarea
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Share your thoughts with the community..."
+              className="w-full rounded-xl border-0 bg-white/70 backdrop-blur-sm shadow-sm p-4 text-gray-700 min-h-[120px] resize-none focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-0 pr-28"
+              disabled={isPosting}
+            />
             <Button
               type="submit"
-              className="bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white hover:opacity-90 py-2 sm:py-3 px-4 sm:px-6"
+              className="absolute bottom-3 right-3 rounded-full bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white h-10 px-4 flex items-center gap-2 shadow-md hover:shadow-lg transition-all hover:opacity-90 hover:scale-105"
               disabled={isPosting}
             >
               {isPosting ? (
-                <span className="flex items-center">
+                <div className="flex items-center gap-2">
                   <svg
-                    className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                    className="animate-spin h-5 w-5 text-white"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -302,10 +305,26 @@ export default function CommunityChat() {
                       d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                     ></path>
                   </svg>
-                  Posting...
-                </span>
+                  <span>Posting...</span>
+                </div>
               ) : (
-                "Post to Community"
+                <>
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="18" 
+                    height="18" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  >
+                    <path d="M22 2L11 13"></path>
+                    <path d="M22 2l-7 20-4-9-9-4 20-7z"></path>
+                  </svg>
+                  <span>Post</span>
+                </>
               )}
             </Button>
           </div>
