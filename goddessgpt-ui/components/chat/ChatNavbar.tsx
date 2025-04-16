@@ -3,7 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Logo } from "@/components/Logo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { useSession, signOut } from "next-auth/react";
@@ -43,8 +42,19 @@ export default function ChatNavbar() {
   return (
     <header className="border-b border-pink-100/30 bg-gray-100/20 backdrop-blur-sm z-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-        <div className="flex items-center space-x-2">
-          <Logo size="sm" withText />
+        <div className="flex items-center gap-3">
+          <Link href="/chat" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <div className="w-8 h-8">
+              <img
+                src="/images/goddessgpt_logo.png"
+                alt="GoddessGPT Logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <span className="font-serif text-lg bg-gradient-to-r from-fuchsia-500 to-pink-500 bg-clip-text text-transparent hidden sm:inline">
+              GoddessGPT
+            </span>
+          </Link>
         </div>
         
         <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">

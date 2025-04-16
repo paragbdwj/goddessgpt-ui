@@ -88,7 +88,7 @@ const navLinkStyles = "group inline-flex h-9 w-max items-center justify-center r
 
 export default function LandingNavbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-pink-800/20 bg-black/40 backdrop-blur-md">
+    <header className="fixed top-0 z-50 w-full border-b border-pink-800/20 bg-black/75 backdrop-blur-md">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
         <div className="flex items-center gap-3">
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
@@ -107,6 +107,15 @@ export default function LandingNavbar() {
         
         <NavigationMenu>
           <NavigationMenuList className="gap-1">
+            <NavigationMenuItem>
+              <Link 
+                href="/#signin" 
+                className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium text-pink-800 transition-colors hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+              >
+                Sign In
+              </Link>
+            </NavigationMenuItem>
+            
             <NavigationMenuItem>
               <Link href="/#features" className={navLinkStyles}>
                 Features
