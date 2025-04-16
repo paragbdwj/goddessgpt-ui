@@ -41,7 +41,7 @@ export default function ChatNavbar() {
   };
   
   return (
-    <header className="border-b border-pink-100 bg-white/70 backdrop-blur-sm z-10">
+    <header className="border-b border-pink-100/30 bg-gray-100/20 backdrop-blur-sm z-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
         <div className="flex items-center space-x-2">
           <Logo size="sm" withText />
@@ -54,8 +54,8 @@ export default function ChatNavbar() {
               href={item.path}
               className={`px-3 py-2 rounded-md text-sm lg:text-base font-medium transition-colors ${
                 pathname === item.path
-                  ? "bg-pink-100 text-pink-700"
-                  : "text-gray-600 hover:bg-pink-50 hover:text-pink-600"
+                  ? "bg-pink-100/50 text-pink-700"
+                  : "text-white hover:bg-pink-50/50 hover:text-pink-600"
               }`}
             >
               {item.name}
@@ -65,7 +65,7 @@ export default function ChatNavbar() {
         
         <div className="flex items-center space-x-3 sm:space-x-4">
           <div className="hidden sm:flex items-center space-x-2 lg:space-x-3">
-            <p className="text-sm lg:text-base font-medium text-gray-700">
+            <p className="text-sm lg:text-base font-medium text-white">
               {user.name}
             </p>
             <Avatar className="h-8 w-8 lg:h-10 lg:w-10 border border-pink-200">
@@ -81,7 +81,7 @@ export default function ChatNavbar() {
           <Button
             variant="ghost"
             size="sm"
-            className="text-gray-600 hover:text-pink-600 text-sm lg:text-base"
+            className="text-white hover:text-pink-600 text-sm lg:text-base"
             onClick={handleSignOut}
           >
             Sign Out
@@ -90,16 +90,16 @@ export default function ChatNavbar() {
       </div>
       
       {/* Mobile navigation */}
-      <div className="md:hidden border-t border-pink-100 bg-white/80">
-        <div className="grid grid-cols-2 divide-x divide-pink-100">
+      <div className="md:hidden border-t border-pink-100/30 bg-gray-100/20 backdrop-blur-sm">
+        <div className="grid grid-cols-2 divide-x divide-pink-100/30">
           {navItems.map((item) => (
             <Link
               key={item.path}
               href={item.path}
               className={`py-2 text-center text-sm font-medium transition-colors ${
                 pathname === item.path
-                  ? "bg-pink-100 text-pink-700"
-                  : "text-gray-600"
+                  ? "bg-pink-100/50 text-pink-700"
+                  : "text-white"
               }`}
             >
               {item.name}

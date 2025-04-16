@@ -99,7 +99,7 @@ export default function LandingNavbar() {
                 className="w-full h-full object-contain"
               />
             </div>
-            <span className="text-lg font-semibold bg-gradient-to-r from-fuchsia-500 to-pink-500 bg-clip-text text-transparent hidden sm:inline">
+            <span className="font-serif text-lg bg-gradient-to-r from-fuchsia-500 to-pink-500 bg-clip-text text-transparent hidden sm:inline">
               GoddessGPT
             </span>
           </Link>
@@ -130,8 +130,8 @@ export default function LandingNavbar() {
                       href="/resources/wellness-guide"
                       className="group block select-none space-y-1 rounded-md p-3 hover:bg-pink-900/20"
                     >
-                      <div className="text-sm font-medium leading-none text-pink-400">Wellness Guide</div>
-                      <div className="text-xs leading-snug text-gray-400">
+                      <div className="text-sm font-medium leading-none text-pink-400 font-serif">Wellness Guide</div>
+                      <div className="text-xs leading-relaxed text-gray-400">
                         Comprehensive guide to physical and mental wellness
                       </div>
                     </Link>
@@ -139,8 +139,8 @@ export default function LandingNavbar() {
                       href="/resources/blog"
                       className="group block select-none space-y-1 rounded-md p-3 hover:bg-pink-900/20"
                     >
-                      <div className="text-sm font-medium leading-none text-pink-400">Blog</div>
-                      <div className="text-xs leading-snug text-gray-400">
+                      <div className="text-sm font-medium leading-none text-pink-400 font-serif">Blog</div>
+                      <div className="text-xs leading-relaxed text-gray-400">
                         Latest articles on women's wellness
                       </div>
                     </Link>
@@ -148,8 +148,8 @@ export default function LandingNavbar() {
                       href="/resources/faqs"
                       className="group block select-none space-y-1 rounded-md p-3 hover:bg-pink-900/20"
                     >
-                      <div className="text-sm font-medium leading-none text-pink-400">FAQs</div>
-                      <div className="text-xs leading-snug text-gray-400">
+                      <div className="text-sm font-medium leading-none text-pink-400 font-serif">FAQs</div>
+                      <div className="text-xs leading-relaxed text-gray-400">
                         Answers to common questions
                       </div>
                     </Link>
@@ -157,8 +157,8 @@ export default function LandingNavbar() {
                       href="/resources/community"
                       className="group block select-none space-y-1 rounded-md p-3 hover:bg-pink-900/20"
                     >
-                      <div className="text-sm font-medium leading-none text-pink-400">Community</div>
-                      <div className="text-xs leading-snug text-gray-400">
+                      <div className="text-sm font-medium leading-none text-pink-400 font-serif">Community</div>
+                      <div className="text-xs leading-relaxed text-gray-400">
                         Join our supportive community
                       </div>
                     </Link>

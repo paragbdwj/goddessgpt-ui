@@ -171,7 +171,7 @@ export default function CommunityChat() {
         <h1 className="text-xl font-semibold text-pink-800">
           Community Discussion
         </h1>
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-white">
           Share experiences, ask questions, and support each other in a safe space.
         </p>
       </div>

@@ -8,6 +8,7 @@ import LandingNavbar from "@/components/LandingNavbar";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
@@ -36,7 +37,7 @@ export default function Home() {
                 />
               </motion.div>
               <motion.h1 
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent"
+                className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -44,7 +45,7 @@ export default function Home() {
                 GoddessGPT
               </motion.h1>
               <motion.p 
-                className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-2xl mx-auto"
+                className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
@@ -61,14 +62,14 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               {/* "Get Started" text above button */}
-              <p className="text-sm sm:text-base font-medium text-gray-300 mb-3">Join thousands of women finding support today</p>
+              <p className="text-sm sm:text-base font-medium text-gray-300 mb-3 tracking-wide">Join thousands of women finding support today</p>
               
               <div className="flex justify-center">
                 <GoogleSignInButton />
               </div>
               
               {/* Trust indicator below button */}
-              <p className="text-xs text-gray-400 mt-3 sm:mt-4">Secure sign-in • 100% private • Free to start</p>
+              <p className="text-xs text-gray-400 mt-3 sm:mt-4 tracking-wide">Secure sign-in • 100% private • Free to start</p>
             </motion.div>
 
             {/* Features */}
@@ -80,18 +81,18 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <div className="text-center mb-8">
-                <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-fuchsia-400 to-pink-400 bg-clip-text text-transparent mb-3">Empowering Features for Women</h2>
-                <p className="text-gray-300 max-w-2xl mx-auto">Discover how GoddessGPT supports you through every aspect of life</p>
+                <h2 className="font-serif text-2xl sm:text-3xl bg-gradient-to-r from-fuchsia-400 to-pink-400 bg-clip-text text-transparent mb-3">Empowering Features for Women</h2>
+                <p className="text-gray-300 max-w-2xl mx-auto leading-relaxed">Discover how GoddessGPT supports you through every aspect of life</p>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card className="bg-gradient-to-br from-fuchsia-900/20 to-pink-900/20 backdrop-blur-sm border-pink-500/30 overflow-hidden group hover:border-pink-500/50 transition-all duration-300">
                   <CardHeader className="pb-2">
                     <div className="text-pink-500 text-2xl mb-2 bg-pink-500/10 w-12 h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">💖</div>
-                    <CardTitle className="text-white text-xl group-hover:text-pink-300 transition-colors">Emotional Support</CardTitle>
+                    <CardTitle className="text-white text-xl font-serif group-hover:text-pink-300 transition-colors">Emotional Support</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-gray-300 group-hover:text-gray-200 transition-colors text-sm">
+                    <CardDescription className="text-gray-300 group-hover:text-gray-200 transition-colors text-sm leading-relaxed">
                       Guidance through life's emotional challenges with compassion and understanding. Get personalized support for anxiety, stress, and relationship concerns.
                     </CardDescription>
                   </CardContent>
@@ -100,10 +101,10 @@ export default function Home() {
                 <Card className="bg-gradient-to-br from-fuchsia-900/20 to-pink-900/20 backdrop-blur-sm border-pink-500/30 overflow-hidden group hover:border-pink-500/50 transition-all duration-300">
                   <CardHeader className="pb-2">
                     <div className="text-pink-500 text-2xl mb-2 bg-pink-500/10 w-12 h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">🌸</div>
-                    <CardTitle className="text-white text-xl group-hover:text-pink-300 transition-colors">Physical Wellness</CardTitle>
+                    <CardTitle className="text-white text-xl font-serif group-hover:text-pink-300 transition-colors">Physical Wellness</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-gray-300 group-hover:text-gray-200 transition-colors text-sm">
+                    <CardDescription className="text-gray-300 group-hover:text-gray-200 transition-colors text-sm leading-relaxed">
                       Health insights tailored for women's unique needs. Access information about hormonal health, fitness guidance, nutrition advice, and more.
                     </CardDescription>
                   </CardContent>
@@ -112,10 +113,10 @@ export default function Home() {
                 <Card className="bg-gradient-to-br from-fuchsia-900/20 to-pink-900/20 backdrop-blur-sm border-pink-500/30 overflow-hidden group hover:border-pink-500/50 transition-all duration-300">
                   <CardHeader className="pb-2">
                     <div className="text-pink-500 text-2xl mb-2 bg-pink-500/10 w-12 h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">✨</div>
-                    <CardTitle className="text-white text-xl group-hover:text-pink-300 transition-colors">Social & Mental Health</CardTitle>
+                    <CardTitle className="text-white text-xl font-serif group-hover:text-pink-300 transition-colors">Social & Mental Health</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-gray-300 group-hover:text-gray-200 transition-colors text-sm">
+                    <CardDescription className="text-gray-300 group-hover:text-gray-200 transition-colors text-sm leading-relaxed">
                       Support for relationships and mental wellbeing. Navigate social situations, improve communication skills, and develop healthy boundaries with confidence.
                     </CardDescription>
                   </CardContent>
@@ -124,10 +125,10 @@ export default function Home() {
                 <Card className="bg-gradient-to-br from-fuchsia-900/20 to-pink-900/20 backdrop-blur-sm border-pink-500/30 overflow-hidden group hover:border-pink-500/50 transition-all duration-300">
                   <CardHeader className="pb-2">
                     <div className="text-pink-500 text-2xl mb-2 bg-pink-500/10 w-12 h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">👭</div>
-                    <CardTitle className="text-white text-xl group-hover:text-pink-300 transition-colors">Global Community</CardTitle>
+                    <CardTitle className="text-white text-xl font-serif group-hover:text-pink-300 transition-colors">Global Community</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-gray-300 group-hover:text-gray-200 transition-colors text-sm">
+                    <CardDescription className="text-gray-300 group-hover:text-gray-200 transition-colors text-sm leading-relaxed">
                       Connect with women worldwide discussing shared experiences and challenges. Learn from diverse perspectives and contribute to meaningful conversations in a safe space.
                     </CardDescription>
                   </CardContent>
@@ -139,13 +140,13 @@ export default function Home() {
                   <div className="flex items-center">
                     <div className="text-pink-500 text-2xl mr-3 bg-pink-500/10 w-12 h-12 rounded-full flex items-center justify-center">🤖</div>
                     <div>
-                      <CardTitle className="text-white text-xl">Meet your complete AI companion</CardTitle>
+                      <CardTitle className="text-white text-xl font-serif">Meet your complete AI companion</CardTitle>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-gray-300 space-y-4">
-                    <p className="text-base text-gray-200">GoddessGPT is your all-in-one support system — here to guide, support, and grow with you:</p>
+                    <p className="text-base text-gray-200 leading-relaxed">GoddessGPT is your all-in-one support system — here to guide, support, and grow with you:</p>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
                       <li className="flex items-start gap-2">
                         <div className="h-5 w-5 flex items-center justify-center rounded-full bg-pink-500/20 text-pink-500 mt-0.5">⚖️</div>
@@ -192,7 +193,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-left mb-8">
               <div>
-                <h3 className="font-semibold text-white mb-3">Company</h3>
+                <h3 className="font-serif text-white mb-3">Company</h3>
                 <ul className="space-y-2">
                   <li><Link href="/about" className="hover:text-pink-400">About Us</Link></li>
                   <li><Link href="/careers" className="hover:text-pink-400">Careers</Link></li>
@@ -200,7 +201,7 @@ export default function Home() {
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold text-white mb-3">Resources</h3>
+                <h3 className="font-serif text-white mb-3">Resources</h3>
                 <ul className="space-y-2">
                   <li><Link href="/resources/blog" className="hover:text-pink-400">Blog</Link></li>
                   <li><Link href="/resources/guides" className="hover:text-pink-400">Wellness Guides</Link></li>
@@ -208,7 +209,7 @@ export default function Home() {
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold text-white mb-3">Legal</h3>
+                <h3 className="font-serif text-white mb-3">Legal</h3>
                 <ul className="space-y-2">
                   <li><Link href="/privacy" className="hover:text-pink-400">Privacy Policy</Link></li>
                   <li><Link href="/terms" className="hover:text-pink-400">Terms of Service</Link></li>
@@ -216,7 +217,7 @@ export default function Home() {
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold text-white mb-3">Connect</h3>
+                <h3 className="font-serif text-white mb-3">Connect</h3>
                 <ul className="space-y-2">
                   <li><Link href="https://twitter.com" className="hover:text-pink-400">Twitter</Link></li>
                   <li><Link href="https://instagram.com" className="hover:text-pink-400">Instagram</Link></li>
