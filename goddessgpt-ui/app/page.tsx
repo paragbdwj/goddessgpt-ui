@@ -58,34 +58,115 @@ export default function Home() {
 
             {/* Features */}
             <motion.div 
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 text-left"
+              className="grid grid-cols-1 gap-4 sm:gap-6 md:gap-8 text-left"
               id="features"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <Card className="bg-white/10 backdrop-blur-sm border-pink-900/20">
-                <CardHeader>
-                  <div className="text-pink-500 text-xl sm:text-2xl mb-2">💖</div>
-                  <CardTitle className="text-white">Emotional Support</CardTitle>
-                  <CardDescription className="text-gray-300">Guidance through life's ups and downs with compassion</CardDescription>
-                </CardHeader>
-              </Card>
+              <div className="text-center mb-8">
+                <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-fuchsia-400 to-pink-400 bg-clip-text text-transparent mb-3">Empowering Features for Women</h2>
+                <p className="text-gray-300 max-w-2xl mx-auto">Discover how GoddessGPT supports you through every aspect of life</p>
+              </div>
               
-              <Card className="bg-white/10 backdrop-blur-sm border-pink-900/20">
-                <CardHeader>
-                  <div className="text-pink-500 text-xl sm:text-2xl mb-2">🌸</div>
-                  <CardTitle className="text-white">Physical Wellness</CardTitle>
-                  <CardDescription className="text-gray-300">Health insights tailored for women's unique needs</CardDescription>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card className="bg-gradient-to-br from-fuchsia-900/20 to-pink-900/20 backdrop-blur-sm border-pink-500/30 overflow-hidden group hover:border-pink-500/50 transition-all duration-300">
+                  <CardHeader className="pb-2">
+                    <div className="text-pink-500 text-2xl mb-2 bg-pink-500/10 w-12 h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">💖</div>
+                    <CardTitle className="text-white text-xl group-hover:text-pink-300 transition-colors">Emotional Support</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-gray-300 group-hover:text-gray-200 transition-colors text-sm">
+                      Guidance through life's emotional challenges with compassion and understanding. Get personalized support for anxiety, stress, and relationship concerns.
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gradient-to-br from-fuchsia-900/20 to-pink-900/20 backdrop-blur-sm border-pink-500/30 overflow-hidden group hover:border-pink-500/50 transition-all duration-300">
+                  <CardHeader className="pb-2">
+                    <div className="text-pink-500 text-2xl mb-2 bg-pink-500/10 w-12 h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">🌸</div>
+                    <CardTitle className="text-white text-xl group-hover:text-pink-300 transition-colors">Physical Wellness</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-gray-300 group-hover:text-gray-200 transition-colors text-sm">
+                      Health insights tailored for women's unique needs. Access information about hormonal health, fitness guidance, nutrition advice, and more.
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gradient-to-br from-fuchsia-900/20 to-pink-900/20 backdrop-blur-sm border-pink-500/30 overflow-hidden group hover:border-pink-500/50 transition-all duration-300">
+                  <CardHeader className="pb-2">
+                    <div className="text-pink-500 text-2xl mb-2 bg-pink-500/10 w-12 h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">✨</div>
+                    <CardTitle className="text-white text-xl group-hover:text-pink-300 transition-colors">Social & Mental Health</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-gray-300 group-hover:text-gray-200 transition-colors text-sm">
+                      Support for relationships and mental wellbeing. Navigate social situations, improve communication skills, and develop healthy boundaries with confidence.
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gradient-to-br from-fuchsia-900/20 to-pink-900/20 backdrop-blur-sm border-pink-500/30 overflow-hidden group hover:border-pink-500/50 transition-all duration-300">
+                  <CardHeader className="pb-2">
+                    <div className="text-pink-500 text-2xl mb-2 bg-pink-500/10 w-12 h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">👭</div>
+                    <CardTitle className="text-white text-xl group-hover:text-pink-300 transition-colors">Global Community</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-gray-300 group-hover:text-gray-200 transition-colors text-sm">
+                      Connect with women worldwide discussing shared experiences and challenges. Learn from diverse perspectives and contribute to meaningful conversations in a safe space.
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <Card className="bg-gradient-to-br from-pink-900/30 to-fuchsia-900/30 backdrop-blur-sm border-pink-500/30 mt-6 overflow-hidden hover:border-pink-500/50 transition-all duration-300">
+                <CardHeader className="pb-2">
+                  <div className="flex items-center">
+                    <div className="text-pink-500 text-2xl mr-3 bg-pink-500/10 w-12 h-12 rounded-full flex items-center justify-center">🤖</div>
+                    <div>
+                      <CardTitle className="text-white text-xl">Your Complete AI Companion</CardTitle>
+                    </div>
+                  </div>
                 </CardHeader>
-              </Card>
-              
-              <Card className="bg-white/10 backdrop-blur-sm border-pink-900/20 sm:col-span-2 lg:col-span-1">
-                <CardHeader>
-                  <div className="text-pink-500 text-xl sm:text-2xl mb-2">✨</div>
-                  <CardTitle className="text-white">Social & Mental Health</CardTitle>
-                  <CardDescription className="text-gray-300">Support for relationships and mental wellbeing</CardDescription>
-                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-gray-300 space-y-4">
+                    <p className="text-base text-gray-200">GoddessGPT is your all-in-one support system for every aspect of your life:</p>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+                      <li className="flex items-start gap-2">
+                        <div className="h-5 w-5 flex items-center justify-center rounded-full bg-pink-500/20 text-pink-500 mt-0.5">⚖️</div>
+                        <span className="text-gray-300 text-sm">Your lawyer - Navigate legal questions</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="h-5 w-5 flex items-center justify-center rounded-full bg-pink-500/20 text-pink-500 mt-0.5">👩‍⚕️</div>
+                        <span className="text-gray-300 text-sm">Your doctor - Understand health concerns</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="h-5 w-5 flex items-center justify-center rounded-full bg-pink-500/20 text-pink-500 mt-0.5">🧠</div>
+                        <span className="text-gray-300 text-sm">Your psychologist - Process emotions</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="h-5 w-5 flex items-center justify-center rounded-full bg-pink-500/20 text-pink-500 mt-0.5">🧘‍♀️</div>
+                        <span className="text-gray-300 text-sm">Your therapist - Find coping strategies</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="h-5 w-5 flex items-center justify-center rounded-full bg-pink-500/20 text-pink-500 mt-0.5">👩‍🏫</div>
+                        <span className="text-gray-300 text-sm">Your teacher - Learn and grow</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="h-5 w-5 flex items-center justify-center rounded-full bg-pink-500/20 text-pink-500 mt-0.5">👯‍♀️</div>
+                        <span className="text-gray-300 text-sm">Your trusted friend - Always by your side</span>
+                      </li>
+                    </ul>
+                  </CardDescription>
+                </CardContent>
+                <CardFooter className="bg-gradient-to-r from-pink-500/5 to-fuchsia-500/5 border-t border-pink-500/10 flex justify-center items-center">
+                  <p className="text-pink-300 text-sm flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                    Complete anonymity guaranteed
+                  </p>
+                </CardFooter>
               </Card>
             </motion.div>
           </div>
