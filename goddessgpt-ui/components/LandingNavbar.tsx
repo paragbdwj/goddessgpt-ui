@@ -1,12 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { toast } from "sonner";
 
 // Create custom navigation components with shifted viewport
 const NavigationMenu = React.forwardRef<
@@ -87,6 +88,23 @@ NavigationMenuContent.displayName = NavigationMenuPrimitive.Content.displayName;
 const navLinkStyles = "group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium text-gray-200 transition-colors hover:bg-pink-900/20 hover:text-pink-300 focus:bg-pink-900/20 focus:text-pink-300 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-pink-900/20 data-[state=open]:bg-pink-900/20";
 
 export default function LandingNavbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  const handleSignIn = async () => {
+    try {
+      // Simulate network delay
+      toast.success("Signing in...");
+      await new Promise((resolve) => setTimeout(resolve, 800));
+      window.location.href = "/chat";
+    } catch (error) {
+      toast.error("Error signing in. Please try again.");
+    }
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
     <header className="fixed top-0 z-50 w-full border-b border-pink-800/20 bg-black/75 backdrop-blur-md">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
@@ -105,15 +123,16 @@ export default function LandingNavbar() {
           </Link>
         </div>
         
-        <NavigationMenu>
+        {/* Desktop Navigation */}
+        <NavigationMenu className="hidden md:flex">
           <NavigationMenuList className="gap-1">
             <NavigationMenuItem>
-              <Link 
-                href="/#signin" 
+              <button 
+                onClick={handleSignIn}
                 className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium text-pink-800 transition-colors hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
               >
                 Sign In
-              </Link>
+              </button>
             </NavigationMenuItem>
             
             <NavigationMenuItem>
@@ -179,14 +198,89 @@ export default function LandingNavbar() {
         </NavigationMenu>
         
         {/* Mobile menu button */}
-        <Button variant="ghost" size="icon" className="md:hidden text-gray-200 hover:bg-pink-900/20 hover:text-pink-300">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
-            <line x1="4" x2="20" y1="12" y2="12"/>
-            <line x1="4" x2="20" y1="6" y2="6"/>
-            <line x1="4" x2="20" y1="18" y2="18"/>
-          </svg>
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          className="md:hidden text-gray-200 hover:bg-pink-900/20 hover:text-pink-300"
+          onClick={toggleMobileMenu}
+        >
+          {mobileMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+              <line x1="4" x2="20" y1="12" y2="12"/>
+              <line x1="4" x2="20" y1="6" y2="6"/>
+              <line x1="4" x2="20" y1="18" y2="18"/>
+            </svg>
+          )}
         </Button>
       </div>
+      
+      {/* Mobile menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-black/90 border-b border-pink-800/30">
+          <div className="px-4 pt-2 pb-3 space-y-1">
+            <button
+              onClick={handleSignIn}
+              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-pink-300 bg-pink-900/20 mb-1"
+            >
+              Sign In
+            </button>
+            <Link
+              href="/#features"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-pink-900/10 hover:text-pink-300"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Features
+            </Link>
+            <Link
+              href="/pricing"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-pink-900/10 hover:text-pink-300"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Pricing
+            </Link>
+            <div className="relative">
+              <button
+                className="flex justify-between w-full px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-pink-900/10 hover:text-pink-300"
+              >
+                <span>Resources</span>
+                <ChevronDown className="h-5 w-5" />
+              </button>
+              <div className="pl-4 pr-2 py-2 space-y-1 border-l border-pink-800/30 ml-3 mt-1">
+                <Link
+                  href="/resources/wellness-guide"
+                  className="block px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-pink-900/10 hover:text-pink-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Wellness Guide
+                </Link>
+                <Link
+                  href="/resources/blog"
+                  className="block px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-pink-900/10 hover:text-pink-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Blog
+                </Link>
+                <Link
+                  href="/resources/faqs"
+                  className="block px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-pink-900/10 hover:text-pink-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  FAQs
+                </Link>
+                <Link
+                  href="/resources/community"
+                  className="block px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-pink-900/10 hover:text-pink-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Community
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 } 
