@@ -17,7 +17,7 @@ export default function LandingPage({ onSignIn }: LandingPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-violet-50 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-100 to-violet-100 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-400/20 rounded-full mix-blend-multiply animate-float"></div>
@@ -37,7 +37,7 @@ export default function LandingPage({ onSignIn }: LandingPageProps) {
             </div>
             <Button 
               onClick={handleGoogleSignIn}
-              className="relative bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold border-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden group"
+              className="relative bg-gradient-to-r from-purple-700 to-pink-700 hover:from-purple-800 hover:to-pink-800 text-white font-semibold border-none shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden group"
             >
               <span className="relative z-10">Sign in with Google</span>
               <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -68,7 +68,7 @@ export default function LandingPage({ onSignIn }: LandingPageProps) {
               <Button 
                 size="lg" 
                 onClick={handleGoogleSignIn}
-                className="relative w-full sm:w-auto bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold border-none shadow-lg hover:shadow-xl px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 overflow-hidden group"
+                className="relative w-full sm:w-auto bg-gradient-to-r from-purple-700 to-pink-700 hover:from-purple-800 hover:to-pink-800 text-white font-semibold border-none shadow-lg hover:shadow-xl px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 overflow-hidden group"
               >
                 <span className="relative z-10">Get Started with Google</span>
                 <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -217,9 +217,9 @@ export default function LandingPage({ onSignIn }: LandingPageProps) {
               <Button 
                 size="lg" 
                 onClick={handleGoogleSignIn}
-                className="relative bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold border-none shadow-lg hover:shadow-xl px-12 py-4 rounded-full transition-all duration-300 transform hover:scale-105 overflow-hidden group"
+                className="relative bg-gradient-to-r from-purple-700 to-pink-700 hover:from-purple-800 hover:to-pink-800 text-white font-semibold border-none shadow-lg hover:shadow-xl px-12 py-4 rounded-full transition-all duration-300 transform hover:scale-105 overflow-hidden group"
               >
-                <span className="relative z-10">Sign Up with Google - It's Free</span>
+                <span className="relative z-10">Sign Up with Google - It&apos;s Free</span>
                 <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
             </div>

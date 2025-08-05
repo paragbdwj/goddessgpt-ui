@@ -116,24 +116,41 @@ export default function ChatInterface() {
                 >
                   <CardHeader className="pb-4">
                     <div className="flex items-center space-x-4">
-                      <div className={`p-3 rounded-full bg-gradient-to-br ${
-                        key === 'doctor' ? 'from-purple-500/20 to-purple-600/30' :
-                        key === 'lawyer' ? 'from-teal-500/20 to-teal-600/30' :
-                        'from-pink-500/20 to-pink-600/30'
-                      } transition-all duration-300 ${isActive ? 'scale-110' : ''}`}>
-                        <Icon className={`h-6 w-6 ${
-                          key === 'doctor' ? 'text-purple-600' :
-                          key === 'lawyer' ? 'text-teal-600' :
-                          'text-pink-600'
-                        }`} />
+                      <div className="relative">
+                        <img
+                          src={`/images/agents/${key}.jpg`}
+                          alt={`${specialist.name} specialist`}
+                          className={`w-14 h-14 rounded-full object-cover border-2 border-white/50 shadow-soft transition-all duration-300 ${
+                            isActive ? 'scale-110 border-purple-400/70' : ''
+                          }`}
+                          onError={(e) => {
+                            e.currentTarget.src = `https://ui-avatars.com/api/?name=${specialist.name}&background=${
+                              key === 'doctor' ? 'a855f7' :
+                              key === 'lawyer' ? '0d9488' :
+                              'ec4899'
+                            }&color=ffffff&size=56`;
+                          }}
+                        />
+                        <div className={`absolute -bottom-1 -right-1 p-1 rounded-full bg-gradient-to-br ${
+                          key === 'doctor' ? 'from-purple-500 to-purple-600' :
+                          key === 'lawyer' ? 'from-teal-500 to-teal-600' :
+                          'from-pink-500 to-pink-600'
+                        } transition-all duration-300 ${isActive ? 'scale-110' : ''}`}>
+                          <Icon className="h-3 w-3 text-white" />
+                        </div>
                       </div>
-                      <div>
+                      <div className="flex-1">
                         <CardTitle className={`text-sm font-semibold ${
                           isActive ? 'gradient-text-purple' : 'text-gray-700'
                         }`}>{specialist.name}</CardTitle>
                         <p className="text-xs text-gray-600 mt-1">
                           {specialist.description}
                         </p>
+                        <div className={`text-xs mt-2 font-medium ${
+                          isActive ? 'text-purple-600' : 'text-gray-500'
+                        }`}>
+                          {isActive ? '● Available' : '○ Tap to chat'}
+                        </div>
                       </div>
                     </div>
                   </CardHeader>
@@ -230,7 +247,7 @@ export default function ChatInterface() {
             <Button
               onClick={handleSendMessage}
               disabled={!inputMessage.trim()}
-              className="relative bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-none shadow-lg hover:shadow-xl rounded-full p-3 h-12 w-12 transition-all duration-300 transform hover:scale-110 disabled:opacity-50 disabled:transform-none overflow-hidden group"
+              className="relative bg-gradient-to-r from-purple-700 to-pink-700 hover:from-purple-800 hover:to-pink-800 text-white border-none shadow-lg hover:shadow-xl rounded-full p-3 h-12 w-12 transition-all duration-300 transform hover:scale-110 disabled:opacity-50 disabled:transform-none overflow-hidden group"
             >
               <Send className="h-5 w-5 relative z-10" />
               <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

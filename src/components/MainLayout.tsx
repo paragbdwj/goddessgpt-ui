@@ -14,7 +14,7 @@ export default function MainLayout({ onSignOut }: MainLayoutProps) {
   const [activeTab, setActiveTab] = useState<'chat' | 'community'>('chat')
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-violet-50 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-100 to-violet-100 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-400/10 rounded-full mix-blend-multiply animate-float"></div>
@@ -41,7 +41,7 @@ export default function MainLayout({ onSignOut }: MainLayoutProps) {
                 onClick={() => setActiveTab('chat')}
                 className={`relative flex items-center space-x-2 rounded-full px-6 py-2 transition-all duration-300 overflow-hidden group ${
                   activeTab === 'chat' 
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg transform scale-105' 
+                    ? 'bg-gradient-to-r from-purple-700 to-pink-700 text-white shadow-lg transform scale-105' 
                     : 'hover:bg-purple-500/10 hover:text-purple-700 hover:scale-105 text-gray-700'
                 }`}
               >
@@ -54,7 +54,7 @@ export default function MainLayout({ onSignOut }: MainLayoutProps) {
                 onClick={() => setActiveTab('community')}
                 className={`relative flex items-center space-x-2 rounded-full px-6 py-2 transition-all duration-300 overflow-hidden group ${
                   activeTab === 'community' 
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg transform scale-105' 
+                    ? 'bg-gradient-to-r from-purple-700 to-pink-700 text-white shadow-lg transform scale-105' 
                     : 'hover:bg-purple-500/10 hover:text-purple-700 hover:scale-105 text-gray-700'
                 }`}
               >
