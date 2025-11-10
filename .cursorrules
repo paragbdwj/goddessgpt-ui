@@ -1,5 +1,0 @@
-1. The project is in next.js and typescript.
-2. Adhere to senior frontend engineer's design principles like modularity.
-3. Follow proper directory structure.
-4. Constants should be made and put in constant file.
-5. env values should be placed in env_file.txt and if a new api is added it should go in api_contracts.txt
