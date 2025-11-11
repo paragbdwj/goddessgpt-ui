@@ -1,0 +1,141 @@
+---
+description: Design principles, color system, and visual consistency guidelines for the GoddessGPT application
+alwaysApply: true
+---
+# Design Principles & Color System
+
+Comprehensive design guidelines to maintain visual consistency and brand identity across the GoddessGPT application.
+
+## Brand Identity
+
+### Primary Brand Color
+- **Main Brand Color**: `#A875D6` (Supportive Lavender)
+- **Usage**: Primary buttons, highlights, brand elements, interactive states
+- **Variations**:
+  - Hover state: `#905fbf`
+  - Light background: `bg-[#A875D6]/5`, `bg-[#A875D6]/10`, `bg-[#A875D6]/20`
+  - Borders: `border-[#A875D6]/10`, `border-[#A875D6]/20`, `border-[#A875D6]/30`
+
+### Color System (CSS Variables)
+Follow the established color tokens defined in `src/index.css`:
+
+**Light Theme Variables:**
+- `--background: 0 0% 100%` (Pure white)
+- `--foreground: 240 10% 3.9%` (Dark blue-gray)
+- `--primary: 240 5.9% 10%` (Very dark blue)
+- `--secondary: 240 4.8% 95.9%` (Light gray)
+- `--muted: 240 4.8% 95.9%` (Light gray)
+- `--accent: 240 4.8% 95.9%` (Light gray)
+- `--destructive: 0 84.2% 60.2%` (Bright red)
+- `--border: 240 5.9% 90%` (Light gray)
+
+**Dark Theme Variables:**
+- `--background: 240 10% 3.9%` (Dark blue-gray)
+- `--foreground: 0 0% 98%` (Off-white)
+- Complete dark theme support with proper contrast ratios
+
+## Typography
+
+### Font Family
+- **Primary**: Inter (Google Fonts)
+- **Usage**: All text content across the application
+- **Weights**: Regular (400), Medium (500), Semibold (600), Bold (700)
+
+### **STANDARDIZED** Typography Scale
+**Consistent font sizes across ALL pages aligned with chat window standards for maximum consistency:**
+
+#### Universal Typography Standards
+**These sizes MUST be used consistently across Community, AI Assistant, Resources, Calendar, and ALL pages:**
+
+- **Page/Section Headers**: `text-lg font-semibold text-black` (Main sections, card headers, dialog titles)
+- **Primary Content Text**: `text-sm font-semibold text-black` (Names, titles, primary labels)
+- **Secondary Content Text**: `text-sm` (Descriptions, body text, card descriptions)
+- **Supporting/Meta Text**: `text-xs` (Timestamps, captions, helper text, metadata)
+- **Muted Text**: Use `text-muted-foreground` class for secondary information
+
+#### **CRITICAL COLOR RULE**
+**All titles across cards and pages MUST be black in color unless explicitly stated otherwise:**
+- **Page Headers**: `text-black` (not brand color)
+- **Card Titles**: `text-black` (not brand color)
+- **Dialog Titles**: `text-black` (not brand color)
+- **Section Headers**: `text-black` (not brand color)
+- **Form Labels**: `text-black` (not brand color)
+- **Button Text**: `text-black` (not brand color)
+
+#### Specific Applications
+- **Page Headers**: `text-lg font-semibold text-black` (Community, Resources, Profile pages)
+- **Post Titles**: `text-sm font-semibold text-black` (Community feed, resource cards)
+- **User Names**: `text-sm font-semibold text-black` (Community listings, chat participants)
+- **Email/Details**: `text-xs text-muted-foreground` (Contact details, metadata)
+- **Timestamps**: `text-xs text-muted-foreground` (All timestamp displays)
+- **Card Titles**: `text-lg font-semibold text-black` (Settings cards, notification cards)
+- **Form Labels**: `text-sm font-medium text-black` (All form inputs)
+- **Button Text**: `text-sm font-medium text-black` (All button labels)
+
+#### Icons Aligned with Text
+- **Section Header Icons**: `h-4 w-4` (alongside `text-lg` headers)
+- **Content Icons**: `h-3.5 w-3.5` (alongside `text-sm` content)
+- **Small Icons**: `h-3 w-3` (alongside `text-xs` metadata)
+
+### Typography Consistency Achievement
+
+**✅ STANDARDIZED ACROSS ALL PAGES:** All pages now use consistent typography matching chat window standards:
+
+| **Element Type** | **Standard Size** | **Applied Pages** |
+|-----------------|-------------------|------------------|
+| **Section Headers** | `text-lg font-semibold` | Community, Resources, Profile, AI Chat Sidebar |
+| **Main Content** | `text-sm font-semibold` | Post titles, user names, notification titles |
+| **Body Text** | `text-sm` | Descriptions, card content, body text |
+| **Metadata** | `text-xs text-muted-foreground` | Timestamps, emails, helper text |
+| **Form Labels** | `text-sm font-medium` | All form inputs across pages |
+| **Buttons** | `text-sm font-medium` | All button text |
+
+**Pages Updated for Consistency:**
+- ✅ **Community Page**: Main title, post titles, user names
+- ✅ **Resources Page**: Section headers, article content
+- ✅ **Profile Page**: Form labels, descriptions, card content
+- ✅ **AI Chat Sidebar**: Conversation titles, timestamps
+- ✅ **Chat Interface**: Base standard for all typography
+
+**Design Impact:**
+- **Unified Experience**: Users see consistent typography across all features
+- **Trust & Safety**: Coherent visual hierarchy builds trust
+- **Improved Readability**: Standardized sizes ensure optimal reading experience
+- **Developer Efficiency**: Clear standards reduce decision-making overhead
+
+### Icon Standards
+- **Page Icons**: `h-5 w-5` (Headers, navigation, page title containers)
+- **Content Icons**: `h-4 w-4` (Inline content, buttons, section headers)
+- **Content Detail Icons**: `h-3.5 w-3.5` (Alongside text-sm content)
+- **Small Icons**: `h-3 w-3` (Badges, small indicators, metadata)
+
+## Layout & Spacing
+
+### Container & Grid
+- **Container**: `container mx-auto px-4` for consistent page width
+- **Page Padding**: `p-6` for main content areas
+- **Card Spacing**: `space-y-6` for vertical card spacing
+- **Grid**: Use responsive grid patterns `md:grid-cols-2 lg:grid-cols-3`
+
+### Border Radius
+- **Radius Variable**: `--radius: 0.5rem`
+- **Large**: `lg: 0.5rem`
+- **Medium**: `md: calc(0.5rem - 2px)`
+- **Small**: `sm: calc(0.5rem - 4px)`
+
+## Component Design Patterns
+
+### Standardized Page Headers
+```typescript
+<div className="flex items-center justify-between p-4 border-b border-border/20">
+  <div className="flex items-center gap-3">
+    <div className="p-2 rounded-lg bg-[#A875D6]/10">
+      <IconName className="h-5 w-5 text-[#A875D6]" />
+    </div>
+    <div>
+      <h1 className="text-lg font-semibold text-black">Page Title</h1>
+      <p className="text-sm text-muted-foreground">Page description</p>
+    </div>
+  </div>
+  {/* Actions/buttons */}
+</div>
